@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @quiz.title %>
+</p>
+
+<%= link_to 'Edit', edit_quiz_path(@quiz), class: "btn btn-default" %> |
+<%= link_to 'Back', quizzes_path, class: "btn btn-default"%>
