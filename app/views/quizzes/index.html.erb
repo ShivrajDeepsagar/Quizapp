@@ -11,6 +11,8 @@
         |
         <%= link_to 'Edit', edit_quiz_path(quiz) %>
         <%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Add question', new_quiz_question_path(quiz), class: "btn btn-default" %>
+
       </li>
     <% end %>
   </ul>

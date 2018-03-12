@@ -18,14 +18,12 @@
         <td><%= question.title %></td>
         <td><%= question.kind %></td>
         <td><%= question.quiz %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [@quiz,question] %></td>
+        <td><%= link_to 'Edit', edit_quiz_question_path(@quiz, question) %></td>
+        <td><%= link_to 'Destroy', [@quiz,question], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Question', new_question_path %>

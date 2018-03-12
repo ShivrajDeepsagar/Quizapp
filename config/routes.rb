@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :quizzes do
     resources :questions
-  end
+  end#polls/1/questions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root 'quizzes#index'

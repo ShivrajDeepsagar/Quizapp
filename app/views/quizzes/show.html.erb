@@ -7,3 +7,11 @@
 
 <%= link_to 'Edit', edit_quiz_path(@quiz), class: "btn btn-default" %> |
 <%= link_to 'Back', quizzes_path, class: "btn btn-default"%>
+<%= link_to 'Add question',new_quiz_question_path(@quiz), class: "btn btn-default" %>
+
+<h2>Questions</h2>
+<ul>
+  <%@quiz.questions.each do |question|%>
+    <li><%=question.title %></li>
+  <%end%>
+</ul>

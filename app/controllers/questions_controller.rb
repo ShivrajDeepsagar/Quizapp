@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :set_quiz
+  before_action :set_kindof_questions
   # GET /questions
   # GET /questions.json
   def index
@@ -14,7 +15,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/new
   def new
-    @question = Question.new
+    @question = @quiz.questions.build
   end
 
   # GET /questions/1/edit
@@ -24,11 +25,11 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
-    @question = Question.new(question_params)
+    @question = @quiz.questions.build(question_params)
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.html { redirect_to @quiz, notice: 'Question was successfully created.' }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }
@@ -73,5 +74,11 @@ class QuestionsController < ApplicationController
     end
     def set_quiz
       @quiz = Quiz.find(params[:quiz_id])
+    end
+    def set_kindof_questions
+      @kind_options = [
+        ["Open answer", "open"],
+        ["MCQ", "choice"]
+      ]
     end
 end
