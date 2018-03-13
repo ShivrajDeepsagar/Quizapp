@@ -1,0 +1,9 @@
+<h1>
+  <%= @quiz.title %>
+</h1>
+<%= form_for [ @quiz, @reply ] do |f| %>
+  <%= f.fields_for :answers do |c| %>
+    <%= render c.object.question.kind, c: c %>
+  <% end %>
+  <%= f.submit "Finish quiz", class: "btn btn-primary" %>
+<% end %>
