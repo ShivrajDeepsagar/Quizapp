@@ -13,5 +13,10 @@
 <ul>
   <%@quiz.questions.each do |question|%>
     <li><%=question.title %></li>
+    <ul>
+      <%question.possible_answers.each do |ps|%>
+        <li><%=ps.title%></li>
+      <%end%>
+    </ul>
   <%end%>
 </ul>
