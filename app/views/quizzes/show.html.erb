@@ -36,6 +36,15 @@
             </dt>
             <dd>
               <%= answer.possible_answer.present? ? answer.possible_answer.title : "No answer" %>
+              <% if answer.possible_answer.present? && answer.possible_answer.title == answer.question.right_answer%>
+                <h3>Your score</h3>
+                 <h4><%=@total_score%></h4>
+                <%else%>
+                <h3>Try again</h3>
+              <%end%>
+            </dd>
+            <dd>
+
             </dd>
             <h4>Right answer</h4>
             <dt><%= answer.question.right_answer%></dt>

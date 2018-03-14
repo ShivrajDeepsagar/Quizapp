@@ -10,6 +10,16 @@ class QuizzesController < ApplicationController
   # GET /quizzes/1
   # GET /quizzes/1.json
   def show
+    @scores = []
+    @total_score =[]
+    @quiz.replies.each do |reply|
+      reply.answers.each do |answer|
+        if answer.possible_answer.present? && answer.possible_answer.title == answer.question.right_answer
+          @scores << 1
+          @total_score= @scores.inject(0) { |total,sum| total+=sum}
+        end
+      end
+    end
   end
 
   # GET /quizzes/new

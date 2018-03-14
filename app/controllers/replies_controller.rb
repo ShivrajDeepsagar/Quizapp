@@ -12,8 +12,8 @@ class RepliesController < ApplicationController
     if @reply.save
       redirect_to @quiz, notice: "Thank you for taking the quiz"
     end
-    
   end
+  
   def reply_params
     params.require(:reply).permit({ answers_attributes: [ :value, :question_id, :possible_answer_id ] })
   end
