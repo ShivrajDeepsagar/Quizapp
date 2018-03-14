@@ -25,13 +25,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'rails_12factor', group: :production
 
 group :development do
    gem 'sqlite3'
 end
 group :production do
-  	gem 'pg'
+  gem 'pg', '~> 0.21'
+  gem 'rails_12factor'
 end
 # Use Unicorn as the app server
 # gem 'unicorn'
