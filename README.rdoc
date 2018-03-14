@@ -3,8 +3,10 @@ Quizapp
 
 The demo of this application is running on https://whispering-mesa-59334.herokuapp.com/
 
-Signin Creds: email: "public_user@example.com" password: "publicpassword"
-Admin creds:  email: "admin@example.com" password: "adminpassword"
+
+1. Signin Creds: email: "public_user@example.com" password: "publicpassword"
+
+2. Admin creds:  email: "admin@example.com" password: "adminpassword"
 
 This is a General knowledge quiz app built on Ruby on Rails
 
