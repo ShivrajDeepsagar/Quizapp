@@ -7,7 +7,7 @@
       <div class="card-body">
         <% @quizzes.each do |quiz| %>
         <h2 class="card-title"><%= link_to quiz.title, quiz %></h2>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text">Take the quiz. Test your general knowledge</p>
         <%= link_to 'Edit', edit_quiz_path(quiz), class: "btn btn-default" if current_user && current_user.admin? %>
         <%= link_to 'Destroy', quiz, class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } if current_user && current_user.admin? %>
         <%= link_to 'Add question', new_quiz_question_path(quiz), class: "btn btn-default" if current_user && current_user.admin? %>
