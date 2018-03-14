@@ -5,10 +5,6 @@
   <%= @quiz.title %>
 </p>
 
-<%= link_to 'Edit', edit_quiz_path(@quiz), class: "btn btn-default" %> |
-<%= link_to 'Back', quizzes_path, class: "btn btn-default"%>
-<%= link_to 'Add question',new_quiz_question_path(@quiz), class: "btn btn-default" %>
-
 <h2>Questions</h2>
 <ul>
   <%@quiz.questions.each do |question|%>
@@ -20,3 +16,32 @@
     </ul>
   <%end%>
 </ul>
+<p>
+<%= link_to 'Edit', edit_quiz_path(@quiz), class: "btn btn-default" %> |
+<%= link_to 'Back', quizzes_path, class: "btn btn-default"%>
+<%= link_to 'Add question',new_quiz_question_path(@quiz), class: "btn btn-default" %>
+</p>
+<% @quiz.replies.each do |reply| %>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading text-right">
+        <%= time_ago_in_words reply.created_at %>
+      </div>
+      <div class="panel-body">
+        <dl>
+          <% reply.answers.each do |answer| %>
+            <dt>
+              <%= answer.question.title %>
+            </dt>
+            <dd>
+              <%= answer.value.present? ? answer.value : answer.possible_answer.title %>
+            </dd>
+            <h4>Right answer</h4>
+            <dt><%= answer.question.right_answer%></dt>
+          <% end %>
+
+        </dl>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313073047) do
+ActiveRecord::Schema.define(version: 20180313143243) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "reply_id"
@@ -39,8 +39,9 @@ ActiveRecord::Schema.define(version: 20180313073047) do
     t.string   "title"
     t.string   "kind"
     t.integer  "quiz_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "right_answer"
   end
 
   add_index "questions", ["quiz_id"], name: "index_questions_on_quiz_id"

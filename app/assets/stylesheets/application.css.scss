@@ -1,2 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+input[type="radio"] {
+  margin-top: -15px;
+  vertical-align: middle;
+}
