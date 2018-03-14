@@ -1,28 +1,32 @@
 == README
+Quizapp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The demo of this application is running on https://whispering-mesa-59334.herokuapp.com/
 
-Things you may want to cover:
+Signin Creds: email: "public_user@example.com" password: "publicpassword"
+Admin creds:  email: "admin@example.com" password: "adminpassword"
 
-* Ruby version
+This is a General knowledge quiz app built on Ruby on Rails
 
-* System dependencies
+ruby version- 2.2.4
 
-* Configuration
+rails version - 4.2.6 
 
-* Database creation
+You can create MCQ quiz on various topics on this platform as an admin and users can take the quiz.
 
-* Database initialization
+To successfully utilize this app you have to do the following on your local system.
 
-* How to run the test suite
+1. Clone
 
-* Services (job queues, cache servers, search engines, etc.)
+2. bundle install
 
-* Deployment instructions
+3. rake db:migrate
 
-* ...
+4. And then in rails console create 2 users 1. Admin 2. Public user
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  > User.create(email: "admin.example.com", password: "password", admin: true)
+  
+  > User.create(email: "public_user.example.com", password: "mypassword", admin: false)
+  
+5. Then as the admin you can create the quiz and users can take the quiz
+ 
