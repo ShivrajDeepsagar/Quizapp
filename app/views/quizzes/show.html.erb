@@ -5,6 +5,7 @@
   <%= @quiz.title %>
 </p>
 
+
 <h2>Questions</h2>
 <ul>
   <%@quiz.questions.each do |question|%>
@@ -34,7 +35,7 @@
               <%= answer.question.title %>
             </dt>
             <dd>
-              <%= answer.value.present? ? answer.value : answer.possible_answer.title %>
+              <%= answer.possible_answer.present? ? answer.possible_answer.title : "No answer" %>
             </dd>
             <h4>Right answer</h4>
             <dt><%= answer.question.right_answer%></dt>
