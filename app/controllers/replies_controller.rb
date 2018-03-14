@@ -1,5 +1,5 @@
 class RepliesController < ApplicationController
-
+  before_action :authenticate_user!
   def new
     @quiz = Quiz.find(params[:quiz_id])
     @reply = @quiz.replies.build
@@ -13,7 +13,7 @@ class RepliesController < ApplicationController
       redirect_to @quiz, notice: "Thank you for taking the quiz"
     end
   end
-  
+
   def reply_params
     params.require(:reply).permit({ answers_attributes: [ :value, :question_id, :possible_answer_id ] })
   end

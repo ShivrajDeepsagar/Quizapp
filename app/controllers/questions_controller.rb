@@ -2,6 +2,8 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :set_quiz
   before_action :set_kindof_questions
+  before_action :admin!, except: [:index]
+
   # GET /questions
   # GET /questions.json
   def index
@@ -81,4 +83,9 @@ class QuestionsController < ApplicationController
         ["MCQ", "choice"]
       ]
     end
+    def admin!
+      authenticate_user!
+      redirect_to root_path, alert: "You are not authorized to perform this action" unless current_user.admin?
+    end
+
 end
