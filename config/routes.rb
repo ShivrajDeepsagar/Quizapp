@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :quizzes do
     resources :questions
     resources :replies, only: [:new, :create] 
