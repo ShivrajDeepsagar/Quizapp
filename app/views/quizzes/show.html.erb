@@ -18,7 +18,7 @@
   <%end%>
 </ul>
 <p>
-<%= link_to 'Edit', edit_quiz_path(@quiz), class: "btn btn-default" if current_user && current_user.admin? %> 
+<%= link_to 'Edit', edit_quiz_path(@quiz), class: "btn btn-default" if current_user && current_user.admin? %>
 <%= link_to 'Back', quizzes_path, class: "btn btn-default" if current_user && current_user.admin?%>
 <%= link_to 'Add question',new_quiz_question_path(@quiz), class: "btn btn-default" if current_user && current_user.admin? %>
 </p>
